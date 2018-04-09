@@ -34,7 +34,7 @@ object Banking
 
 			else if (command.equalsIgnoreCase("Balance"))
 			{
-				val amount = file.foldLeft(Option.empty[String]) {case (_, line) => Option(line)}
+				val amount = file.foldLeft(Option.empty[String]) {case (_, line) => Some(line)}
 				println(s"Your balance is $amount")
 			}
 
