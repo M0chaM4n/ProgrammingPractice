@@ -31,7 +31,7 @@ public class Banking
 			String command = input.next();
 			if (command.equalsIgnoreCase("Deposit")) //Done so 'deposit', 'Deposit', 'DEPosit', etc all are valid commands. 
 			{
-				System.out.println("Enter Deposit amount: ");
+				System.out.println("Please enter an amount to deposit: ");
 				String amount = input.next();
 				while(true)
 				{
@@ -61,7 +61,7 @@ public class Banking
 			//Works just like Deposit but adds a negative sign
 			else if	 (command.equalsIgnoreCase("Withdraw"))
 			{
-				System.out.println("Enter Withdrawal amount: ");
+				System.out.println("Please enter an amount to withdraw: ");
 				String amount = input.next();
 				while(true)
 				{
