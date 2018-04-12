@@ -58,6 +58,7 @@ public class Banking
 					}
 				}
 			}
+			//Works just like Deposit but adds a negative sign
 			else if	 (command.equalsIgnoreCase("Withdraw"))
 			{
 				System.out.println("Enter Withdrawal amount: ");
@@ -89,18 +90,20 @@ public class Banking
 			{
 				//read Html file and add everything
 				double sum = 0;
+				//pull all <td> elements as the table is a single row table, and then loop thru to sum them all up
 				for( Element data : account.select("td"))
 				{
 					double i = Double.parseDouble(data.text());
 					sum += i;
 				}
+				//Format the return value so as there are only two numbers after the decimal.
 				NumberFormat dollar = NumberFormat.getCurrencyInstance();
 				System.out.println("The current balance is " + dollar.format(sum));
 			}
 			else if (command.equalsIgnoreCase("Exit"))
 				return;
 			else
-				System.out.println("Command invalid.");
+				System.out.println("Command invalid."); //wrong command, loop back for another command to be inputted
 		}
 	}
 }
